@@ -42,7 +42,7 @@ const TopWordsGrid = (props: topWords) => {
 }
 
 function getWords(setter: React.Dispatch<React.SetStateAction<topWord[]>>) {
-  axios.get('http://localhost:5000/topWords')
+  axios.get('https://wortschatz-me.herokuapp.com/topWords')
   .then((response: AxiosResponse<topWord[]>) => {
     setter(response.data)
   })
