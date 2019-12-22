@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import { Grid, Icon, Card, Accordion } from 'semantic-ui-react';
+import React, {useState, useEffect} from 'react';
+import { Grid, Icon, Card, Accordion, Button } from 'semantic-ui-react';
+import axios, { AxiosResponse } from 'axios';
 
 interface topWord {
   id: number;
@@ -11,48 +12,6 @@ interface topWords {
   words: topWord[]
 }
 
-const dummydata: topWord[] = [  // Done and returned by the backend
-    {
-      id: 1,
-      word: 'eins',
-      translation: 'one'
-    },
-    {
-      id: 2,
-      word: 'zwei',
-      translation: 'two'
-    },
-    {
-      id: 3,
-      word: 'drei',
-      translation: 'three'
-    },
-    {
-      id: 4,
-      word: 'vier',
-      translation: 'four'
-    },
-    {
-      id: 5,
-      word: 'funf',
-      translation: 'five'
-    },
-    {
-      id: 6,
-      word: 'sechs',
-      translation: 'six'
-    },
-    {
-      id: 7,
-      word: 'sieben',
-      translation: 'seven'
-    },
-    {
-      id: 8,
-      word: 'acht',
-      translation: 'eight'
-    }
-]
 
 const getGridColumn = (words: topWord[]) => {
   const centered = {textAlign: 'center'}
@@ -67,8 +26,8 @@ const getGridColumn = (words: topWord[]) => {
   ));
 }
 
-function TopWordsGrid(props: topWords) {
-  let words = props.words;
+const TopWordsGrid = (props: topWords) => {
+  const words = props.words
   const words1 = words.slice(0, words.length/2)
   const words2 = words.slice(words.length/2)
   const gridItems1 = getGridColumn(words1);
@@ -82,12 +41,38 @@ function TopWordsGrid(props: topWords) {
   )
 }
 
-const Lesson: React.FC = () => {
+function getWords(setter: React.Dispatch<React.SetStateAction<topWord[]>>) {
+  axios.get('http://localhost:5000/topWords')
+  .then((response: AxiosResponse<topWord[]>) => {
+    setter(response.data)
+  })
+  .catch((e) => {
+    console.log(e)
+  })
+}
+
+
+function TopWords() {
 
   const [active, setActive] = useState(true);
+  const [words, setWords] = useState([{
+    id: 1,
+    word: 'eins',
+    translation: 'one'
+  }])
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/topWords')
+    .then((response: AxiosResponse<topWord[]>) => {
+      setWords(response.data)
+    })
+    .catch((e) => {
+      console.log(e)
+    })
+  }, [])
   
   return (
-    <Accordion styled>
+    <Accordion style={{maxWidth: "80%", margin: "auto"}}>
       <Accordion.Title
         active={active}
         index={0}
@@ -97,10 +82,13 @@ const Lesson: React.FC = () => {
         Top 8 Words
       </Accordion.Title>
       <Accordion.Content active={active}>
-        <TopWordsGrid words={dummydata} />
+        <div style={{padding: '10px'}}>
+          <Button primary onClick={() => {getWords(setWords)}}>Generate</Button>
+        </div>
+        <TopWordsGrid words={words}/>
       </Accordion.Content>
     </Accordion>
   )
 }
 
-export default Lesson;
+export default TopWords;
