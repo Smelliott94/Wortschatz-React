@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Wortschatz-React/precache-manifest.95c3f2c450ee6e70240224612bf86e9f.js"
+  "/Wortschatz-React/precache-manifest.a658b510822d619d6cdc95864486473c.js"
 );
 
 self.addEventListener('message', (event) => {
