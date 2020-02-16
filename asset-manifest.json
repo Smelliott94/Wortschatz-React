@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Wortschatz-React/static/css/main.10578d90.chunk.css",
+    "main.css": "/Wortschatz-React/static/css/main.1ccb908c.chunk.css",
     "main.js": "/Wortschatz-React/static/js/main.36146bed.chunk.js",
     "main.js.map": "/Wortschatz-React/static/js/main.36146bed.chunk.js.map",
     "runtime-main.js": "/Wortschatz-React/static/js/runtime-main.366f76d4.js",
@@ -8,15 +8,15 @@
     "static/js/2.5ce5e041.chunk.js": "/Wortschatz-React/static/js/2.5ce5e041.chunk.js",
     "static/js/2.5ce5e041.chunk.js.map": "/Wortschatz-React/static/js/2.5ce5e041.chunk.js.map",
     "index.html": "/Wortschatz-React/index.html",
-    "precache-manifest.886e0b895b1822afc53049b9c6d8b7ea.js": "/Wortschatz-React/precache-manifest.886e0b895b1822afc53049b9c6d8b7ea.js",
+    "precache-manifest.a4faefe09f3c9aa31d3a0bda9214812b.js": "/Wortschatz-React/precache-manifest.a4faefe09f3c9aa31d3a0bda9214812b.js",
     "service-worker.js": "/Wortschatz-React/service-worker.js",
-    "static/css/main.10578d90.chunk.css.map": "/Wortschatz-React/static/css/main.10578d90.chunk.css.map",
+    "static/css/main.1ccb908c.chunk.css.map": "/Wortschatz-React/static/css/main.1ccb908c.chunk.css.map",
     "static/js/2.5ce5e041.chunk.js.LICENSE": "/Wortschatz-React/static/js/2.5ce5e041.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.366f76d4.js",
     "static/js/2.5ce5e041.chunk.js",
-    "static/css/main.10578d90.chunk.css",
+    "static/css/main.1ccb908c.chunk.css",
     "static/js/main.36146bed.chunk.js"
   ]
 }

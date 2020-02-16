@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fbf5aa643c8e64023276eec15b18b2c3",
+    "revision": "52f8da42d5fb1cebcafffd2e5e3cec40",
     "url": "/Wortschatz-React/index.html"
   },
   {
-    "revision": "582b1aed885902892c4b",
-    "url": "/Wortschatz-React/static/css/main.10578d90.chunk.css"
+    "revision": "b76f435dbe037c98aeae",
+    "url": "/Wortschatz-React/static/css/main.1ccb908c.chunk.css"
   },
   {
     "revision": "5a64da804477c51f5957",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Wortschatz-React/static/js/2.5ce5e041.chunk.js.LICENSE"
   },
   {
-    "revision": "582b1aed885902892c4b",
+    "revision": "b76f435dbe037c98aeae",
     "url": "/Wortschatz-React/static/js/main.36146bed.chunk.js"
   },
   {
